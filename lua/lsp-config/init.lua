@@ -101,6 +101,8 @@ mapping = {
 
 local util = require("lspconfig/util")
 lspconfig.pyright.setup({})
+lspconfig.eslint.setup({})
+lspconfig.tsserver.setup({})
 lspconfig.gopls.setup{
 		cmd = {"gopls"},
 	-- for postfix snippets and analyzers
@@ -118,6 +120,16 @@ lspconfig.gopls.setup{
 	on_attach = on_attach,
 }
 
+lspconfig.csharp_ls.setup{
+	cmd = { "/Users/taf/.dotnet/tools/csharp-ls" },
+	flietypes = { "cs" },
+	init_options = {
+	  AutomaticWorkspaceInit = true
+	},
+}
+lspconfig.omnisharp.setup{
+	    cmd = { "dotnet", "/path/to/omnisharp/OmniSharp.dll" },
+}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
