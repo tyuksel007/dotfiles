@@ -103,6 +103,9 @@ local util = require("lspconfig/util")
 lspconfig.pyright.setup({})
 lspconfig.eslint.setup({})
 lspconfig.tsserver.setup({})
+lspconfig.cssls.setup({})
+lspconfig.jsonls.setup({})
+lspconfig.html.setup({})
 lspconfig.gopls.setup{
 		cmd = {"gopls"},
 	-- for postfix snippets and analyzers
